@@ -1,0 +1,50 @@
+{
+  "name": "bip-tira-teima",
+  "version": "1.0.0",
+  "description": "Solução pra comparar excel bipado",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Deleon Simoni",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^11.2.3",
+    "electron-reloader": "^1.2.0"
+  },
+  "build": {
+    "appId": "br.com.bip.tira-teima",
+    "productName": "B.I.P Tira-Teima",
+    "copyright": "Copyright © 2021 Deleon Simoni",
+    "win": {
+      "icon": "./assets/icon.png"
+    },
+    "files": [
+      "./build/**/*",
+      "./*",
+      "./dist/**/*",
+      "./node_modules/**/*",
+      "./assets/**/*",
+      "*.js"
+    ],
+    "directories": {
+      "buildResources": "public"
+    }
+  },
+  "dependencies": {
+    "electron-progressbar": "^2.0.0",
+    "file-saver": "^2.0.5",
+    "read-excel-file": "^5.0.0",
+    "xlsx": "^0.16.9"
+  }
+}

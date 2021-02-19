@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>B.I.P - Tira Teima</title>
+  </head>
+  <body >
+
+    <div class="center">
+      <img class="center" src="./assets/bip nome deitado.png" alt="Transformando seu inventário">
+    </div>
+
+    <h1 class="center">Tira Teima</h1>
+    <p>
+      Excel Cliente <br/>
+      <input id="file1" type="file" id="excelCliente" name="excelCliente" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+    </p>
+    <p>
+      Excel Bipado<br/>
+      <input id="file2" type="file" id="excelBipado" name="excelBipado" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+    </p>
+
+    <button id="checkFilesButton" class="button button2" ><span>Processar </span></button>
+
+
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+    <script src="./bip-analyzer.js"></script>
+
+  </body>
+
+</html>
