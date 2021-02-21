@@ -6,9 +6,10 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "32bit": "electron-builder --ia32 "
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/deleonsimoni/bip-tirateima",
   "keywords": [
     "Electron",
     "quick",
@@ -20,7 +21,9 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^11.2.3",
-    "electron-reloader": "^1.2.0"
+    "electron-reloader": "^1.2.0",
+    "electron-builder": "^22.9.1"
+
   },
   "build": {
     "appId": "br.com.bip.tira-teima",

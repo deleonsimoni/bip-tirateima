@@ -65,25 +65,33 @@ btnclick.addEventListener('click', async function () {
             } else {
 
                 let achei = false;
+                let contabilizacaoRepetida = 0;
 
                 for (let jotex = 0; jotex < rowsBip.length; jotex++) {    
 
                     if(jotex == 0){
                         continue;
                     } else {
-                        if(rowsBip[jotex][0] == rowsClient[index][3]){
+                        if(rowsBip[jotex][0] == rowsClient[index][3] || rowsBip[jotex][0] == rowsClient[index][0]){
+                            
                             contagemTotal += rowsBip[jotex][2];
-                            rowsClient[index][6] = rowsBip[jotex][2];
-                            rowsClient[index][7] = (rowsBip[jotex][2] - rowsClient[index][5]);
+                            contabilizacaoRepetida += rowsBip[jotex][2];
+                            rowsClient[index][6] = contabilizacaoRepetida;
+                            if(rowsClient[index][5] >= 0){
+                                rowsClient[index][7] = contabilizacaoRepetida - rowsClient[index][5];
+                            } else {
+                                rowsClient[index][7] = rowsClient[index][5] + contabilizacaoRepetida;
+                            }
                             achei = true;
-                            break;
+                        
+                            //break;
                         }
                     }
                 }
 
                 if(!achei){
                     rowsClient[index][6] = 0;
-                    rowsClient[index][7] = (0- rowsClient[index][5]);
+                    rowsClient[index][7] = rowsClient[index][5];
                 }
             }
 
@@ -128,7 +136,7 @@ btnclick.addEventListener('click', async function () {
                 };
         }*/
 
-        var wbout = XLSX.write(workbook, {bookType:'xlsx', bookSST:false ,  type: 'binary'}, "C:\\Users\\Deleon\\Desktop\\bip tira teima\\teste4.xlsx");
+        var wbout = XLSX.write(workbook, {bookType:'xlsx', bookSST:false ,  type: 'binary'});
 
         FileSaver.saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'Resultado.xlsx');
 
